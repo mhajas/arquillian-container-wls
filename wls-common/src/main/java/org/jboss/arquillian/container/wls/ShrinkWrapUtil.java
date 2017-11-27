@@ -106,7 +106,7 @@ public final class ShrinkWrapUtil {
     public static File toFile(final Archive<?> archive, final boolean exploded) {
         // create a random named temp file, then delete and use it as a directory
         try {
-            File root = File.createTempFile("arquillian", archive.getName());
+            File root = File.createTempFile("arquillian", archive.getName(), new File("/tmp"));
             root.delete();
             root.mkdirs();
 
